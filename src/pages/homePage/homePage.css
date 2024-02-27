@@ -1,0 +1,16 @@
+.restaurant-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.search-container {
+  margin: 20px 0;
+}
+.filter {
+  display: flex;
+  margin: 25px 0px;
+  gap: 20px;
+}
+.filter-btn{
+    cursor: pointer;
+}
