@@ -6,6 +6,7 @@ import AboutUsPage from "./pages/aboutUsPage/AboutUsPage";
 import ContactUsPage from "./pages/contactUsPage/ContactUsPage";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 import Header from "./components/header/Header";
+import RestraurantMenuPage from "./pages/restraurantMenuPage/RestraurantMenuPage";
 
 const AppLayout = () => {
   return (
@@ -32,16 +33,12 @@ const appRouter = createBrowserRouter([
         path: "/contactUs",
         element: <ContactUsPage />,
       },
+      {
+        path: "/restraurants/:resId",
+        element: <RestraurantMenuPage/>,
+      },
     ],
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/aboutUs",
-    element: <AboutUsPage />,
-  },
-  {
-    path: "/contactUs",
-    element: <ContactUsPage />,
   },
 ]);
 

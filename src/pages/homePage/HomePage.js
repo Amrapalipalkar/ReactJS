@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./homePage.css";
 import RestaurantCard from "../../components/restaurantCard/RestaurantCard";
-import Header from "../../components/header/Header";
 import Shimmer from "../../components/shimmer/Shimmer";
+import { Link } from "react-router-dom";
 // import resList from "../../utils/mockData";
 
 const HomePage = () => {
@@ -10,18 +10,18 @@ const HomePage = () => {
   const [searchText, setSearchText] = useState("");
   const [searchData, setSearchData] = useState([]);
 
+  const url = "https://corsproxy.org/?" + encodeURIComponent("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      );
-      const json = await response.json();
+      const response = await fetch(url);
+      const apiData = await response.json();
       const restaurants =
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      apiData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
       //optional Chaining
       setMockData(restaurants);
@@ -38,7 +38,7 @@ const HomePage = () => {
 
   // console.log(mockData, "data");
 
-  return mockData.length == 0 ? (
+  return mockData?.length == 0 ? (
     <Shimmer />
   ) : (
     <>
@@ -75,8 +75,8 @@ const HomePage = () => {
           </button>
         </div>
         <div className="restaurant-container">
-          {searchData.map((resCard) => (
-            <RestaurantCard key={resCard.info.id} resData={resCard} />
+          {searchData?.map((resCard) => (
+            <Link key={resCard.info.id} to={"/restraurants/" + resCard.info.id}><RestaurantCard resData={resCard} /></Link>
           ))}
         </div>
       </div>
