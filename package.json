@@ -1,32 +1,34 @@
 {
-  "name": "reactjs",
+  "name": "yes",
   "version": "1.0.0",
-  "description": "This is ReactJS by Amrapali Palkar",
+  "description": "ZestyBite is your one-stop food ordering app that delivers flavor, freshness, and convenience right to your doorstep. Whether you’re craving street food, comfort meals, or gourmet delights, ZestyBite connects you to the best restaurants around you.",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Amrapalipalkar/ReactJS.git"
+    "url": "git+https://github.com/Amrapalipalkar/ZestyBite.git"
   },
+  "keywords": [
+    "food delivery, online food ordering, react app"
+  ],
   "author": "Amrapali Palkar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Amrapalipalkar/ReactJS/issues"
+    "url": "https://github.com/Amrapalipalkar/ZestyBite/issues"
   },
-  "homepage": "https://github.com/Amrapalipalkar/ReactJS#readme",
+  "homepage": "https://github.com/Amrapalipalkar/ZestyBite#readme",
   "devDependencies": {
-    "parcel": "^2.11.0",
-    "process": "^0.11.10"
+    "parcel": "^2.15.4"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.1"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "browserslist": [
-    "last 2 versions"
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
   ]
 }
